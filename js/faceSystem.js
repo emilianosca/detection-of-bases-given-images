@@ -20,7 +20,7 @@ $(document).ready(function(){
         faceapi.draw.drawFaceExpressions(canvas, faceDescriptions)
 
         
-        const labels = ['ross', 'rachel', 'chandler', 'monica', 'phoebe', 'joey']
+        const labels = ['sergio-01', 'viche-01', 'mike-01']
 
         const labeledFaceDescriptors = await Promise.all(
             labels.map(async label => {
