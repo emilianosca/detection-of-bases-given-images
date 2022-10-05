@@ -36,11 +36,52 @@
     <body> 
         <!-- <img src="images/mike-02.jpg" id="originalImg" width="1400" height="800" />
         <canvas id="reflay" class="overlay"></canvas> -->
-        <video id="video" width="720" height="560" autoplay muted></video>
+
+
+
+        <img src="images/sergio-02.jpg" id="originalImg" width="1400" height="800" />
+        <canvas id="reflay" class="overlay"></canvas>
+
+
+        <div class="content-area">
+          <h1>MDN - navigator.mediaDevices.getUserMedia(): Still photo capture demo</h1>
+          <p>
+            This example demonstrates how to set up a media stream using your built-in
+            webcam, fetch an image from that stream, and create a PNG using that image.
+          </p>
+  
+          <div class="camera">
+            <video id="video">Video stream not available.</video>
+            <button id="startbutton">Take photo</button>
+          </div>
+  
+          <canvas id="canvas"> </canvas>
+          <div class="output">
+            <img id="photo" alt="The screen capture will appear in this box." />
+          </div>
+          
+  
+          <div class="allowed-area">
+  
+          </div>
+  
+          <!-- <p>
+            Visit our article
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Taking_still_photos">
+              Taking still photos with WebRTC</a
+            >
+            to learn more about the technologies used here.
+          </p> -->
+        </div>
+
+
+        <!-- <video id="video" width="720" height="560" autoplay muted></video> -->
         <script src="js/jquery-2.1.1.min.js"></script>
         <script src="js/face-api.js"></script>
+        <script src="js/alpha-face-system.js"></script>
         <!-- <script src="js/faceSystem.js"></script> -->
-        <script src="js/face-video-system.js"></script>
+        <!-- <script src="js/face-video-system.js"></script> -->
     </body>
 </html>
 
