@@ -1,4 +1,6 @@
-* {
+.allowed-area {
+  height: 200px;
+  width: auto;
   background-color: aqua;
 }
 
@@ -9,7 +11,7 @@
     height: 240px;
   }
   
-  #photo {
+  .photo {
     border: 1px solid black;
     box-shadow: 2px 2px 3px black;
     width: 320px;

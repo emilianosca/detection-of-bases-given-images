@@ -12,27 +12,23 @@
 <body>
 
     <div class="content-area">
-        <h1>MDN - navigator.mediaDevices.getUserMedia(): Still photo capture demo</h1>
-        <p>
-          This example demonstrates how to set up a media stream using your built-in
-          webcam, fetch an image from that stream, and create a PNG using that image.
-        </p>
-
+       
         <div class="camera">
           <video id="video">Video stream not available.</video>
           <button id="startbutton">Take photo</button>
         </div>
 
-        <canvas id="canvas"> </canvas>
-        <div class="output">
-          <img id="photo" alt="The screen capture will appear in this box." />
-        </div>
+        <canvas id="reflay" class="overlay">  <div class="output">
+            <img id="photo" alt="The screen capture will appear in this box." />
+          </div></canvas>
+
+
+      
+
+        <!-- <img src="images/mike-02.jpg" id="originalImg" width="1400" height="800" />
+        <canvas id="reflay" class="overlay"></canvas> -->
+
         
-
-        <div class="allowed-area">
-
-        </div>
-
         <!-- <p>
           Visit our article
           <a
@@ -43,8 +39,10 @@
         </p> -->
       </div>
     <script src="./02-convertor.js"></script>
+    <script type="module" src="./mainProcess.js"></script>
     <script src="/js/jquery-2.1.1.min.js"></script>
     <script src="/js/face-api.js"></script>
+
     
     
 </body>
