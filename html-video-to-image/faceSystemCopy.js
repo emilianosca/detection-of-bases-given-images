@@ -1,6 +1,18 @@
 export function faceSystem(){
               
     console.log("faceSystem working ! :)");
+
+    // function that will determine events driven by the faceSystem
+    function faceStatus(status, face){
+        if(status == false){ 
+            console.log("Status is " + status + " and face is " + face)
+        }
+        else{
+            console.log("Status is " + status  + " and face is " + face)
+        }
+    
+    }
+
     async function face(){
         
         const MODEL_URL = '/models'
@@ -21,7 +33,7 @@ export function faceSystem(){
         faceapi.draw.drawFaceExpressions(canvas, faceDescriptions)
 
         
-        const labels = ['sergio-01', 'mike-01', 'emi-01', 'viche-01']
+        const labels = ['sergio-01', 'mike-01', 'emi-01', 'viche-01'] // here add the names of the people that wants to be recognize
 
         const labeledFaceDescriptors = await Promise.all(
 
@@ -33,11 +45,8 @@ export function faceSystem(){
                 const faceDescription = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
                 
                 if (!faceDescription) {
-                console.log('no faces detected for ${label}')
+                // console.log('no faces detected for ${label}')
                 throw new Error(`no faces detected for ${label}`)
-                }
-                else {
-                    console.log('face detected for' + label)
                 }
                 
                 const faceDescriptors = [faceDescription.descriptor]
@@ -46,34 +55,36 @@ export function faceSystem(){
         );
 
 
-        console.log("start recognition");
+        
+
         const threshold = 0.6
         const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, threshold)
 
         const results = faceDescriptions.map(fd => faceMatcher.findBestMatch(fd.descriptor))
-        console.log("results were " + results);
+        
 
         results.forEach((bestMatch, i) => {
-            console.log("ENTERED HERe " + bestMatch.toString())
             const box = faceDescriptions[i].detection.box
-            const text = bestMatch.toString()
+            const text = bestMatch.toString() + " was detected"
 
             if(threshold > bestMatch.distance){ 
                 console.log("face detected ! :)" + bestMatch.toString());
                 const drawBox = new faceapi.draw.DrawBox(box, { label: text })
                 drawBox.draw(canvas)
+                faceStatus(true, bestMatch.toString())
             }
             else {
                 console.log("no face detected ! :(");
                 const drawBox = new faceapi.draw.DrawBox(box, { label: 'no match' })
+                faceStatus(false, "no face detected")
+
                 drawBox.draw(canvas)
             }
         })
-        console.log("end recognition");
-
     }
     
     face()
+
 }
 
 

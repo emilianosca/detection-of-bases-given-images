@@ -10,18 +10,11 @@ $(document).ready(function(){
         await faceapi.loadFaceExpressionModel(MODEL_URL)
 
         
-        // get image from function takepicture() in convertor.js
-        
-
-        
         const img= document.getElementById('originalImg')
-
-
-
         let faceDescriptions = await faceapi.detectAllFaces(img).withFaceLandmarks().withFaceDescriptors().withFaceExpressions()
         const canvas = $('#reflay').get(0)
-        faceapi.matchDimensions(canvas, img)
 
+        faceapi.matchDimensions(canvas, img)
         faceDescriptions = faceapi.resizeResults(faceDescriptions, img)
         faceapi.draw.drawDetections(canvas, faceDescriptions)
         faceapi.draw.drawFaceLandmarks(canvas, faceDescriptions)
@@ -29,7 +22,7 @@ $(document).ready(function(){
 
         
         const labels = ['sergio-01', 'mike-01', 'emi-01']
-
+        
         const labeledFaceDescriptors = await Promise.all(
             labels.map(async label => {
 

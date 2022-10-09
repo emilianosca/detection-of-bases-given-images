@@ -136,8 +136,3 @@ function screenshot() {
 
 mainConvertor();
 
-
-
-
-
-// face-api.js - face recognition for the web
