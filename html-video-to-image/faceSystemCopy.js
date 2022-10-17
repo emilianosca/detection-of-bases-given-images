@@ -79,6 +79,9 @@ export function faceSystem(){
                 faceStatus(false, "no face detected")
 
                 drawBox.draw(canvas)
+                
+                // Funcion que proviene de popup.js que nos pone un popup al no detectar una cara
+                openPopUp();
             }
         })
     }

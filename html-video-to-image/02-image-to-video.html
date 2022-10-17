@@ -1,38 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Image face detector</title>
     <script defer src="/js/face-api.min.js"></script>
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
 
-</head>
-<body>
+    <!-- Modal pop up hidden by default -->
+    <div id="popup" class="popup">
+      <div class="modal-content">
+        <h1>Lo siento no se ha detectado ninguna cara o no te encuentras en la base de datos :(</h1>
+        <button id="close-popup">Cerrar Sesión</button>
+      </div>
+    </div>
 
     <div class="content-area">
-       
-        <div class="camera">
-          <video id="video">Video stream not available.</video>
-          <button id="startbutton">Take photo</button>
-        </div>
-
-        <canvas id="reflay" class="overlay">  <div class="output">
-            <img id="photo" alt="The screen capture will appear in this box." />
-          </div></canvas>
-
+      <div class="camera">
+        <video id="video">Video stream not available.</video>
+        <button id="startbutton">Take photo</button>
       </div>
 
-      <!-- Moudule Scripts -->
-      <script type="module" src="./mainProcess.js"></script>
+      <canvas id="reflay" class="overlay">
+        <div class="output">
+          <img
+            id="photo"
+            alt="The screen capture will appear in this box."
+          /></div
+      ></canvas>
+    </div>
 
-      <!-- Scripts --> 
-      <script src="/js/jquery-2.1.1.min.js"></script>
-      <script src="/js/face-api.js"></script>
-      <script src="./02-convertor.js"></script>
+    <!-- Popup script -->
+    <script src="./popup.js"></script>
 
+    <!-- Moudule Scripts -->
+    <script type="module" src="./mainProcess.js"></script>
 
-  
-</body>
+    <!-- Scripts -->
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script src="/js/face-api.js"></script>
+    <script src="./02-convertor.js"></script>
+    
+  </body>
 </html>
