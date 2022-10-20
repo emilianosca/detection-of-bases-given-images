@@ -21,4 +21,3 @@ function myStopFunction() {
 }
 
 const myInterval = setInterval(countdown, 1000);
-

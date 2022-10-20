@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <header class="header">      
-      <span class="circle" id="circle-left"></span>      
-      <span class="circle" id="circle-right"></span>      
+    <header class="header">
+      <span class="circle" id="circle-left"></span>
+      <span class="circle" id="circle-right"></span>
       <div class="title-section">
         <h1>¡Bienvenido al registro de pacientes!</h1>
       </div>
@@ -24,25 +24,20 @@
           Lo siento no se ha detectado ninguna cara o no te encuentras en la
           base de datos :(
         </h1>
-      
+
         <!-- button that links to  -->
         <a href="http://localhost:3000/">
           <button id="close-popup">Cerrar Sesión</button>
         </a>
-    
-
-
       </div>
     </div>
-    
+
     <!-- Modal pop up hidden by default -->
     <div id="popup-timer" class="popup">
       <div class="modal-content">
-        <h1>
-          Lo siento pero se te ha terminado el tiempo :(
-        </h1>
+        <h1>Lo siento pero se te ha terminado el tiempo :(</h1>
         <a href="http://localhost:3000/">
-        <button id="close-popup-timer">Cerrar Sesión</button>
+          <button id="close-popup-timer">Cerrar Sesión</button>
         </a>
       </div>
     </div>
@@ -53,19 +48,69 @@
           <video id="video">Video stream not available.</video>
           <button id="startbutton">Take photo</button>
         </div>
-  
+
         <canvas id="reflay" class="overlay">
           <div class="output">
             <img
               id="photo"
               alt="The screen capture will appear in this box."
             /></div
-        ></canvas>      
+        ></canvas>
       </div>
-  
+
       <div class="counter-container">
         <p>00:<span id="countdown">45</span></p>
       </div>
+    </div>
+
+    <div class="form-section">
+      <form>
+        <h2>¡Comencemos!</h2>
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input id="nombre" type="text" placeholder="Nombre del paciente..." />
+        </div>
+
+        <div>
+          <label for="edad">Edad:</label>
+          <input id="edad" type="text" placeholder="Edad del paciente..." />
+        </div>
+
+        <div>
+          <label for="altura">Altura:</label>
+          <input id="altura" type="text" placeholder="Altura del paciente..." />
+        </div>
+
+        <div>
+          <label for="peso">Peso:</label>
+          <input id="peso" type="text" placeholder="Peso del paciente..." />
+        </div>
+
+        <div>
+          <label for="tipo-sangre">Tipo de sangre:</label>
+          <input id="tipo-sangre" type="text" placeholder="Tipo de sangre del paciente..." />
+        </div>
+
+        <div>
+          <label for="enfermedades">Enfermedades:</label>
+          <input id="enfermedades" type="text" placeholder="Enfermedades del paciente..." />
+        </div>
+
+        <div>
+          <label for="zona">Zona:</label>
+          <input id="zona" type="text" placeholder="Zona del paciente..." />
+        </div>
+
+        <div>
+          <label for="iglesia">Iglesia:</label>
+          <input id="iglesia" type="text" placeholder="Iglesia del paciente..." />
+        </div>
+
+        <div>
+          <label for="codigo-postal">Código postal:</label>
+          <input id="codigo-postal" type="text" placeholder="Código postal del paciente..." />
+        </div>
+      </form>
     </div>
 
     <!-- Popup script -->

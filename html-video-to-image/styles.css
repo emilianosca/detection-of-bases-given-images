@@ -132,13 +132,61 @@ canvas {
 .counter-container {
   font-size: 5rem;
   padding: 0.5rem 1rem;
-  margin-right: 1rem;
+  margin-right: 2rem;
   border: 1px solid black;
   border-radius: 10px;
 }
 
 .content-container {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+}
+
+/* Form styles */
+
+.form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.form-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-section div {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+form {
+  background-color: #ffffff;
+  width: 500px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  
+  padding: 2rem;
+}
+
+label, 
+input {
+  font: inherit;
+  display: block;
+  font-size: 1.2rem;
+}
+
+label {
+  margin-bottom: 0.2rem;
+  font-weight: bold;
+}
+
+.form-section input[type=text] {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 6px;    
 }
