@@ -20,4 +20,4 @@ function myStopFunction() {
     clearTimeout(myInterval);
 }
 
-const myInterval = setInterval(countdown, 1000);
+// const myInterval = setInterval(countdown, 1000);

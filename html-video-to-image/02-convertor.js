@@ -78,7 +78,7 @@ function mainConvertor() {
         screenshot();
         ev.preventDefault();
       }, false);
-  
+
       clearphoto();
     }
   

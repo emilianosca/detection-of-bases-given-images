@@ -152,12 +152,17 @@ canvas {
   justify-content: center;
   align-items: center;
   margin: 2rem auto;
+  display: none;
 }
 
-.form-section h2 {
+h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
   text-align: center;
+}
+
+.instructions p {
+  font-size: 1.2rem;
 }
 
 .form-section div {
@@ -189,4 +194,33 @@ label {
     width: 100%;
     padding: 0.5rem;
     border-radius: 6px;    
+}
+
+.instructions {
+  text-align: center;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+#submit-btn {
+  font: inherit;
+  color: #ffffff;
+  background-color: #D87A63;
+  border: 1px solid #D87A63;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}
+
+#submit-btn:hover {
+  background-color: transparent;
+  color: #D87A63;
 }
