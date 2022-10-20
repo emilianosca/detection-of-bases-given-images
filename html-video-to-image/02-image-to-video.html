@@ -9,12 +9,32 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
+    <header class="header">      
+      <span class="circle" id="circle-left"></span>      
+      <span class="circle" id="circle-right"></span>      
+      <div class="title-section">
+        <h1>¡Bienvenido al registro de pacientes!</h1>
+      </div>
+    </header>
 
     <!-- Modal pop up hidden by default -->
     <div id="popup" class="popup">
       <div class="modal-content">
-        <h1>Lo siento no se ha detectado ninguna cara o no te encuentras en la base de datos :(</h1>
+        <h1>
+          Lo siento no se ha detectado ninguna cara o no te encuentras en la
+          base de datos :(
+        </h1>
         <button id="close-popup">Cerrar Sesión</button>
+      </div>
+    </div>
+    
+    <!-- Modal pop up hidden by default -->
+    <div id="popup-timer" class="popup">
+      <div class="modal-content">
+        <h1>
+          Lo siento pero se te ha terminado el tiempo :(
+        </h1>
+        <button id="close-popup-timer">Cerrar Sesión</button>
       </div>
     </div>
 
@@ -30,11 +50,18 @@
             id="photo"
             alt="The screen capture will appear in this box."
           /></div
-      ></canvas>
+      ></canvas>      
+    </div>
+
+    <div class="counter-container">
+      <p>00:<span id="countdown">30</span></p>
     </div>
 
     <!-- Popup script -->
     <script src="./popup.js"></script>
+
+    <!-- Countdown -->
+    <script src="./countdown.js"></script>
 
     <!-- Moudule Scripts -->
     <script type="module" src="./mainProcess.js"></script>
@@ -43,6 +70,5 @@
     <script src="/js/jquery-2.1.1.min.js"></script>
     <script src="/js/face-api.js"></script>
     <script src="./02-convertor.js"></script>
-    
   </body>
 </html>
