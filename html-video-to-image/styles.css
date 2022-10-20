@@ -25,7 +25,7 @@ body {
   height: 240px;
 }
 
-#canvas {
+canvas {
   display: none; 
 }
 
@@ -131,4 +131,14 @@ body {
 
 .counter-container {
   font-size: 5rem;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

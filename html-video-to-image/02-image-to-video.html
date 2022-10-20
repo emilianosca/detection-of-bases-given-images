@@ -47,23 +47,25 @@
       </div>
     </div>
 
-    <div class="content-area">
-      <div class="camera">
-        <video id="video">Video stream not available.</video>
-        <button id="startbutton">Take photo</button>
+    <div class="content-container">
+      <div class="content-area">
+        <div class="camera">
+          <video id="video">Video stream not available.</video>
+          <button id="startbutton">Take photo</button>
+        </div>
+  
+        <canvas id="reflay" class="overlay">
+          <div class="output">
+            <img
+              id="photo"
+              alt="The screen capture will appear in this box."
+            /></div
+        ></canvas>      
       </div>
-
-      <canvas id="reflay" class="overlay">
-        <div class="output">
-          <img
-            id="photo"
-            alt="The screen capture will appear in this box."
-          /></div
-      ></canvas>      
-    </div>
-
-    <div class="counter-container">
-      <p>00:<span id="countdown">30</span></p>
+  
+      <div class="counter-container">
+        <p>00:<span id="countdown">45</span></p>
+      </div>
     </div>
 
     <!-- Popup script -->

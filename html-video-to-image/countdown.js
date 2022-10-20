@@ -1,4 +1,4 @@
-let startingSeconds = 30;
+let startingSeconds = 45;
 
 const countDownSpan = document.getElementById('countdown');
 
