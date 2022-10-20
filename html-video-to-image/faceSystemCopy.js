@@ -4,11 +4,13 @@ export function faceSystem(){
 
     // function that will determine events driven by the faceSystem
     function faceStatus(status, face){
-        if(status == false){ 
+        if(status == true){ 
             console.log("Status is " + status + " and face is " + face)
         }
         else{
             console.log("Status is " + status  + " and face is " + face)
+            // Funcion que proviene de popup.js que nos pone un popup al no detectar una cara
+            openPopUp();
         }
     
     }
@@ -79,11 +81,13 @@ export function faceSystem(){
                 faceStatus(false, "no face detected")
 
                 drawBox.draw(canvas)
-                
-                // Funcion que proviene de popup.js que nos pone un popup al no detectar una cara
-                openPopUp();
             }
         })
+
+        if (results.length === 0) {
+            console.log("No face recognize");
+            faceStatus(false, "nobody detected");
+        }
     }
     
     face()
