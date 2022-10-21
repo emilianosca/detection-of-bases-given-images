@@ -67,6 +67,7 @@ canvas {
 .header {
   background-color: #D6EFEF;
   height: 15vh;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .header .circle {
