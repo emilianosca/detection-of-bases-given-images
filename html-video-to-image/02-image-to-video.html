@@ -7,133 +7,86 @@
     <title>Image face detector</title>
     <script defer src="/js/face-api.min.js"></script>
     <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
   </head>
   <body>
-    <header class="header">
-      <span class="circle" id="circle-left"></span>
-      <span class="circle" id="circle-right"></span>
-      <div class="title-section">
-        <h1>¡Bienvenido al registro de pacientes!</h1>
-      </div>
-    </header>
+    <div class="w-min-content flex black items-center w-full px-8 py-24 mx-auto md:px-12 lg:px-16 max-w-7xl">
 
-    <!-- Modal pop up hidden by default -->
-    <div id="popup" class="popup">
-      <div class="modal-content">
-        <h1>
-          Lo siento no se ha detectado ninguna cara o no te encuentras en la
-          base de datos :(
-        </h1>
 
-        <!-- button that links to  -->
-        <a href="http://localhost:3000/">
-          <button id="close-popup">Cerrar Sesión</button>
-        </a>
-      </div>
-    </div>
+<!-- 
+        <h2 class="text-3xl font-medium tracking-tight text-black sm:text-4xl">
+          aqui pones el qr abajo
+        </h2>
+        <p class="mt-2 text-sm text-gray-800">
+          Aqui pones un texto guapo
+        </p>
+        
+        <div class="h-screen w-full flex align-middle justify-start">
+          bla bla bla
+        </div> -->
+        
 
-    <!-- Modal pop up hidden by default -->
-    <div id="popup-timer" class="popup">
-      <div class="modal-content">
-        <h1>Lo siento pero se te ha terminado el tiempo :(</h1>
-        <a href="http://localhost:3000/">
-          <button id="close-popup-timer">Cerrar Sesión</button>
-        </a>
-      </div>
-    </div>
-
-    <div class="content-container">
-      <div class="content-area">
-        <div class="camera">
-          <video id="video">Video stream not available.</video>
-          <button id="startbutton">Take photo</button>
+      <!-- Modal pop up hidden by default -->
+      <div id="popup" class="popup h-screen flex items-center justify-center align-middle bg-black">
+        <div class="modal-content bg-black items-center">
+          
+          <h2 class="text-3xl font-medium tracking-tight text-white sm:text-4xl">
+            Lamentamos las molestias, pero no se ha podido verificar tu identidad
+          </h2>
+          
         </div>
-
-        <canvas id="reflay" class="overlay">
-          <div class="output">
-            <img
-              id="photo"
-              alt="The screen capture will appear in this box."
-            /></div
-        ></canvas>
       </div>
 
-      <div class="counter-container">
-        <p>00:<span id="countdown">45</span></p>
+      <!-- Modal pop up hidden by default -->
+      <div id="popup-timer" class="popup">
+        <div class="modal-content">
+          <h1>Lo siento pero se te ha terminado el tiempo :(</h1>
+          <a href="http://localhost:3000/">
+            <button id="close-popup-timer">Cerrar Sesión</button>
+          </a>
+        </div>
       </div>
+
+
+      <div class="flex justify-center items-center h-screen flex-wrap flex-col">
+        <div class="content-area">
+          <div class="camera">
+            <video id="video">Video stream not available.</video>
+            <button id="startbutton">Take photo</button>
+          </div>
+
+          <canvas id="reflay" class="overlay">
+            <div class="output">
+              <img
+                id="photo"
+                alt="The screen capture will appear in this box."
+              /></div
+          ></canvas>
+        </div>
+
+        <div class="counter-container">
+          <p>00:<span id="countdown">45</span></p>
+        </div>
+      </div>
+
     </div>
 
-    <div class="instructions">
-      <h2>Instrucciones</h2>
-      <p>Para iniciar con el registro del paceinte favor de hacer click en take photo</p>
-    </div>
-
-    <div class="form-section" id="form">
-      <form>
-        <h2>¡Comencemos!</h2>
-        <div>
-          <label for="nombre">Nombre:</label>
-          <input id="nombre" type="text" placeholder="Nombre del paciente..." />
-        </div>
-
-        <div>
-          <label for="edad">Edad:</label>
-          <input id="edad" type="text" placeholder="Edad del paciente..." />
-        </div>
-
-        <div>
-          <label for="altura">Altura:</label>
-          <input id="altura" type="text" placeholder="Altura del paciente..." />
-        </div>
-
-        <div>
-          <label for="peso">Peso:</label>
-          <input id="peso" type="text" placeholder="Peso del paciente..." />
-        </div>
-
-        <div>
-          <label for="tipo-sangre">Tipo de sangre:</label>
-          <input id="tipo-sangre" type="text" placeholder="Tipo de sangre del paciente..." />
-        </div>
-
-        <div>
-          <label for="enfermedades">Enfermedades:</label>
-          <input id="enfermedades" type="text" placeholder="Enfermedades del paciente..." />
-        </div>
-
-        <div>
-          <label for="zona">Zona:</label>
-          <input id="zona" type="text" placeholder="Zona del paciente..." />
-        </div>
-
-        <div>
-          <label for="iglesia">Iglesia:</label>
-          <input id="iglesia" type="text" placeholder="Iglesia del paciente..." />
-        </div>
-
-        <div>
-          <label for="codigo-postal">Código postal:</label>
-          <input id="codigo-postal" type="text" placeholder="Código postal del paciente..." />
-        </div>
-
-        <div class="btn-container">          
-          <button id="submit-btn">Submit</button>
-        </div>
-      </form>
-    </div>
-
-    <!-- Popup script -->
-    <script src="./popup.js"></script>
-
-    <!-- Countdown -->
-    <script src="./countdown.js"></script>
-
-    <!-- Moudule Scripts -->
-    <script type="module" src="./mainProcess.js"></script>
-
-    <!-- Scripts -->
-    <script src="/js/jquery-2.1.1.min.js"></script>
-    <script src="/js/face-api.js"></script>
     <script src="./02-convertor.js"></script>
+    <script src="./countdown.js"></script>
+    <script src="./popup.js"></script>
+    <script src="/js/face-api.js"></script>
+    <script src="/js/jquery-2.1.1.min.js"></script>
+    <script type="module" src="./mainProcess.js"></script>
   </body>
 </html>

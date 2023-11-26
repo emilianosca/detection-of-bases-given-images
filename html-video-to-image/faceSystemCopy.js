@@ -1,3 +1,4 @@
+
 export function faceSystem(){
               
     console.log("faceSystem working ! :)");
@@ -12,7 +13,6 @@ export function faceSystem(){
             // Funcion que proviene de popup.js que nos pone un popup al no detectar una cara
             openPopUp();
         }
-    
     }
 
     async function face(){
@@ -74,6 +74,12 @@ export function faceSystem(){
                 const drawBox = new faceapi.draw.DrawBox(box, { label: text })
                 drawBox.draw(canvas)
                 faceStatus(true, bestMatch.toString())
+
+                // if 35 seconds pass, redirect to window www.google.com
+                setTimeout(() => {
+                    window.location.replace("https://www.google.com");
+                }, 30000);
+
             }
             else {
                 console.log("no face detected ! :(");
