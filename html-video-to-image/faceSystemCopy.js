@@ -77,8 +77,8 @@ export function faceSystem(){
 
                 // if 35 seconds pass, redirect to window www.google.com
                 setTimeout(() => {
-                    window.location.replace("https://www.google.com");
-                }, 30000);
+                    window.location.replace("http://localhost:5173/graciasManitas.html");
+                }, 8000);
 
             }
             else {
