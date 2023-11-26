@@ -21,7 +21,7 @@
     </script>
   </head>
   <body>
-    <div class="w-min-content flex black items-center w-full px-8 py-24 mx-auto md:px-12 lg:px-16 max-w-7xl">
+    <div class="flex black items-center w-full px-8 py-24 mx-auto md:px-12 lg:px-16 max-w-7xl">
 
 
 <!-- 
@@ -38,13 +38,12 @@
         
 
       <!-- Modal pop up hidden by default -->
-      <div id="popup" class="popup h-screen flex items-center justify-center align-middle bg-black">
-        <div class="modal-content bg-black items-center">
+      <div id="popup" class="popup h-screen bg-black text-white">
+        <div class="modal-content">
           
           <h2 class="text-3xl font-medium tracking-tight text-white sm:text-4xl">
             Lamentamos las molestias, pero no se ha podido verificar tu identidad
           </h2>
-          
         </div>
       </div>
 
@@ -60,6 +59,7 @@
 
 
       <div class="flex justify-center items-center h-screen flex-wrap flex-col">
+
         <div class="content-area">
           <div class="camera">
             <video id="video">Video stream not available.</video>
